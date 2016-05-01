@@ -17,6 +17,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# NPM files
+api/node_modules
+MobileTax/platforms/browser
+MobileTax/plugins
+
 # =========================
 # Operating System Files
 # =========================
