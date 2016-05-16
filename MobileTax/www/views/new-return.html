@@ -1,0 +1,67 @@
+<div>
+    <form id="new-vat-return">
+        <div data-role="tabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#newone" data-theme="a" data-ajax="false" id="menu-nav-one" class='ui-btn-active'>1</a></li>
+                    <li><a href="#newtwo" data-theme="a" data-ajax="false" id="menu-nav-two">2</a></li>
+                    <li><a href="#newthree" data-theme="a" data-ajax="false" id="menu-nav-three">3</a></li>
+                    <li><a href="#newfour" data-theme="a" data-ajax="false" id="menu-nav-four">4</a></li>
+                </ul>
+            </div>
+            <div id="newone" class="ui-content">
+                <h1> Sales </h1>
+                <label for="sales-general"> Sales General Rate 16% </label>
+                <input type="text" name="sales-general" id="sales-general" placeholder="0.00">
+                <label for="sales-zero"> Sales Zero Rate 0% </label>
+                <input type="text" name="sales-zero" id="sales-zero" placeholder="0.00">
+                <label for="sales-special"> Sales Special Rate 12% </label>
+                <input type="text" name="sales-special" id="sales-special" placeholder="0.00">
+                <label for="sales-exempt"> Exempt Sales </label>
+                <input type="text" name="sales-exempt" id="sales-exempt" placeholder="0.00">
+                <label>Total Sales: <label>
+                <div id="total-sales"><p>$0.00</p></div>               
+            </div>
+            <div id="newtwo" class="ui-content">
+                <h1> Expenses </h1>
+                <label for="purchases-general"> Purchases General Rate 16% </label>
+                <input type="text" name="purchases-general" id="purchases-general" placeholder="0.00">
+                <label for="purchases-zero"> Purchases Zero Rate 0% </label>
+                <input type="text" name="purchases-zero" id="purchases-zero" placeholder="0.00">
+                <label for="purchases-special"> Purchases Special Rate 12% </label>
+                <input type="text" name="purchases-special" id="purchases-special" placeholder="0.00">
+                <label for="purchases-exempt"> Exempt Purchases </label>
+                <input type="text" name="purchases-exempt" id="purchases-exempt" placeholder="0.00">
+                <label>Total Purchases: <label>
+                <div id="total-purchases"><p>$0.00</p></div>
+            </div>
+            <div id="newthree" class="ui-content">
+                <h1> Credits and Adjustments </h1>
+                <label for="vat-imported">VAT on Imported Goods and Services</label>
+                <input type="text" name="vat-imported" id="vat-imported" placeholder="0.00">
+                <label for="vat-withheld">Withheld VAT Amounts</label>
+                <input type="text" name="vat-withheld" id="vat-withheld" placeholder="0.00">
+                <label for="other-credit">Other Credit Adjustments</label>
+                <input type="text" name="other-credit" id="other-credit" placeholder="0.00">
+                <label for="exempt-purchases"> Exempt Purchases </label>
+                <input type="text" name="exempt-purchases" id="exempt-purchases" placeholder="0.00">
+                <label>Total: <label>
+                <div id="total-credits"><p>$0.00</p></div>
+            </div>
+            <div id="newfour" class="ui-content">
+                <h1> Calculation </h1>
+                <label>Output VAT: <label>
+                <div id="output-vat"><p>$0.00</p></div>
+                <label>Input VAT: <label>
+                <div id="input-vat"><p>$0.00</p></div>
+                <label>Withheld VAT: <label>
+                <div id="withheld-vat"><p>$0.00</p></div>
+                <h1 id="vat-due">VAT Due: $0.00</h1>
+                <input type="submit" value="Submit Return">
+                <button id="save-return">SAVE FOR LATER</button>
+            </div>            
+        </div>
+    </form>
+    <script src="js/lib/jquery-2.2.3.min.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+</div>

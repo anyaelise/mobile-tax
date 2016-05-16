@@ -19,9 +19,13 @@ $RECYCLE.BIN/
 
 # NPM files
 api/node_modules
-MobileTax/platforms/browser
-MobileTax/plugins
 
+# Various Cordova files
+MobileTax/www/js/lib
+MobileTax/platforms/browser
+MobileTax/platforms/android
+MobileTax/plugins
+defaults
 # =========================
 # Operating System Files
 # =========================
