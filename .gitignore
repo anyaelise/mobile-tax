@@ -22,6 +22,7 @@ api/node_modules
 
 # Various Cordova files
 MobileTax/www/js/lib
+MobileTax/www/node_modules
 MobileTax/platforms/browser
 MobileTax/platforms/android
 MobileTax/plugins

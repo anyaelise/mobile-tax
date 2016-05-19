@@ -16,6 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(fonts/Monsterrat.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/Roboto.woff2) format('woff2');
+}
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -24,7 +39,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color: #fff ! important;
+    background-color: #fff;
     /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -70,6 +85,7 @@ body {
 }
 
 h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size:24px;
     font-weight:normal;
     margin:0px;
@@ -119,7 +135,11 @@ h1 {
     background-color: #fff;
 }
 
-#login {
+#page h1 {
+    margin-bottom: 20px;
+}
+
+#login, #registration {
     text-align: center;
     width: 60%;
     margin-left: auto;
@@ -128,10 +148,96 @@ h1 {
     margin-bottom: 200px;
 }
 
+#login label, #registration label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#save-registration {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#save-registration label {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+#menu {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu button {
+    margin-top: 20px;
+}
+
+#new-vat-return {
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#new-vat-return h1 {
+    margin-top: 10px;
+    color: #f70000;
+}
+
+#new-vat-return label {
+    font-weight: bold;    
+}
+
+.return-form label {
+    margin-top: 20px ! important;
+}
+
+.total {
+    margin-top: -20px;
+    color: #f70000;
+}
+
+.total label {    
+    font-size: 1.2em ! important;
+    display: inline-block ! important;
+}
+
+.total p {
+    margin-left: 10px;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.calculation {
+    text-align: right;
+}
+
+.calculation label {
+    font-size: 1.1em ! important;
+    display: inline-block ! important;
+    margin-bottom: 10px;
+}
+
+.calculation p {
+    margin-left: 50px;
+    margin-right: 50px;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
 h1.heading  {
-    margin-top: 5%;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 2.5em;
+}   
+
+li.continue {
+    font-family: 'Roboto', sans-serif;
+    color: #f70000 ! important;
+    font-weight: bold;
 }
 
 img {
@@ -141,3 +247,7 @@ img {
     margin: 0 auto;
 }
 
+/* jQuery Mobile Overrides */
+.ui-page-theme-a {
+    background-color: #fff ! important;
+}

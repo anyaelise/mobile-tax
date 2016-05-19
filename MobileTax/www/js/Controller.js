@@ -36,7 +36,7 @@ var Controller = function() {
         },
 
         renderRegistration: function() {
-            var $page = $('#page');
+            var $page = $('#landing');
             $page.empty();
             $page.load("./views/registration-view.html");
         },
@@ -123,7 +123,7 @@ var Controller = function() {
                         var splitArray = key.split('-');
                         var timestamp = parseInt(splitArray[1]);
                         var date = new Date(timestamp).toLocaleString();
-                        $('ul').append('<li> VAT Return - ' + date + ' <button class="continue" id="continue-' + key + '"> Continue </button>' + '<button class="delete" id="delete-' + key + '"> Delete </button>');
+                        $('ul').append('<li class="continue"> VAT Return - ' + date + ' <button class="continue" id="continue-' + key + '"> Continue </button>' + '<button class="delete" id="delete-' + key + '"> Delete </button>');
                     }
                 });
 
@@ -145,7 +145,7 @@ var Controller = function() {
                             + parseFloat($('#sales-zero').val() || 0.00) 
                             + parseFloat($('#sales-special').val() || 0.00) 
                             + parseFloat($('#sales-exempt').val() || 0.00);
-            $('#total-sales').html('<p> $' + totalSales.toFixed(2) + '</p>');
+            $('#total-sales p').html('KES ' + totalSales.toFixed(2));
             self.calculateVAT();
         },
 
@@ -154,7 +154,7 @@ var Controller = function() {
                             + parseFloat($('#purchases-zero').val() || 0.00) 
                             + parseFloat($('#purchases-special').val() || 0.00) 
                             + parseFloat($('#purchases-exempt').val() || 0.00);
-            $('#total-purchases').html('<p> $' + totalPurchases.toFixed(2) + '</p>');
+            $('#total-purchases p').html('KES ' + totalPurchases.toFixed(2));
             self.calculateVAT();
         },
 
@@ -162,7 +162,7 @@ var Controller = function() {
             var totalCredits = parseFloat($('#vat-imported').val() || 0.00) 
                             + parseFloat($('#vat-withheld').val() || 0.00) 
                             + parseFloat($('#other-credit').val() || 0.00);
-            $('#total-credits').html('<p> $' + totalCredits.toFixed(2) + '</p>');
+            $('#total-credits p').html('KES ' + totalCredits.toFixed(2));
             self.calculateVAT();
         },
 
@@ -171,14 +171,14 @@ var Controller = function() {
             var inputVAT = parseFloat($('#purchases-general').val() || 0.00) * 0.16;
             var withheldVAT = parseFloat($('#vat-withheld').val() || 0.00);
             var totalVAT =  outputVAT - inputVAT - withheldVAT;
-            $('#output-vat').html('<p> $' + outputVAT.toFixed(2) + '</p>');
-            $('#input-vat').html('<p> $' + inputVAT.toFixed(2) + '</p>');
-            $('#withheld-vat').html('<p> $' + withheldVAT.toFixed(2) + '</p>');
+            $('#output-vat p').html('KES ' + outputVAT.toFixed(2));
+            $('#input-vat p').html('KES ' + inputVAT.toFixed(2));
+            $('#withheld-vat p').html('KES ' + withheldVAT.toFixed(2));
 
             if(totalVAT > 0 ) {
-                $('#vat-due').html('VAT Due: $' + totalVAT.toFixed(2));
+                $('#vat-due').html('VAT Due: KES ' + totalVAT.toFixed(2));
             } else {
-                $('#vat-due').html('VAT Due: ($' + (-1*totalVAT.toFixed(2)) + ')');
+                $('#vat-due').html('VAT Due: (KES ' + ((-1*totalVAT).toFixed(2)) + ')');
             }            
         },
 
