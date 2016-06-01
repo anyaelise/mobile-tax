@@ -27,6 +27,8 @@ MobileTax/platforms/browser
 MobileTax/platforms/android
 MobileTax/plugins
 defaults
+IonicTest
+MobileTaxIonic
 # =========================
 # Operating System Files
 # =========================

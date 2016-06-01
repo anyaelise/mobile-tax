@@ -32,7 +32,7 @@ var app = {
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
         console.log("device ready");
-        controller = new Controller();
+        //controller = new Controller();
     }
 };
 
