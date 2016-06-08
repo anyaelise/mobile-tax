@@ -24,6 +24,7 @@ define([
 
 		initialize: function (options) {
 			this.render();
+			$('.ui-page').enhanceWithin();
 		},
 
 		render: function() {

@@ -23,6 +23,7 @@ define([
 
 		initialize: function (options) {
 			this.render();
+			$('.ui-page').enhanceWithin();
 		},
 
 		template: _.template(Return),
