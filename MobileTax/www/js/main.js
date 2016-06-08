@@ -40,10 +40,8 @@ require([
 	'routers/router'
 ], function ($, jqm, Backbone, AppView, AppRouter) {
 	/*jshint nonew:false*/
-	// Initialize routing and start Backbone.history()
-	new AppRouter();
-	Backbone.history.start();
 
-	// Initialize the application view
-	new AppView();
+	// Initialize routing and start Backbone.history()
+	var router = new AppRouter();
+	Backbone.history.start();
 });

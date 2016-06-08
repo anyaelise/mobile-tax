@@ -15,7 +15,12 @@ define([
 
 		// Instead of generating a new element, bind to the existing skeleton of
 		// the App already present in the HTML.
-		el: '#landing',
+		el: '#page',
+
+		events: {
+			'click #registration-button': 	'startRegistration', 
+			'click #login-button':			'doLogin'
+		},
 
 		initialize: function (options) {
 			this.render();
@@ -24,8 +29,17 @@ define([
 		render: function() {
 			//check for registration, then render either registration option or login option
 			var landing = (window.localStorage.passCode) ? _.template(login) : _.template(register);
-			this.$el.html(landing);
+			this.$el.find('#landing').html(landing);
 			return this.$el;
+		},
+
+		startRegistration: function(params) {
+			console.log("starting registration");
+		},
+
+		doLogin: function(params) {
+			console.log("logging in");
+			Backbone.history.navigate('menu', true);
 		}
 	});
 
