@@ -5,9 +5,10 @@ define([
 	'underscore',
 	'backbone',
 	'jquerymobile',
+	'text!templates/landing-view.html',
 	'text!templates/registration-view.html',
 	'text!templates/login-view.html'
-], function ($, _, Backbone, JQM, register, login) {
+], function ($, _, Backbone, JQM, landing, register, login) {
 	'use strict';
 	
 	// Our overall **AppView** is the top-level piece of UI.
@@ -16,6 +17,8 @@ define([
 		// Instead of generating a new element, bind to the existing skeleton of
 		// the App already present in the HTML.
 		el: '#page',
+
+		template: _.template(landing),
 
 		events: {
 			'click #registration-button': 	'startRegistration', 
@@ -29,18 +32,23 @@ define([
 
 		render: function() {
 			//check for registration, then render either registration option or login option
-			var landing = (window.localStorage.passCode) ? _.template(login) : _.template(register);
-			this.$el.find('#landing').html(landing);
+			var choice = (window.localStorage.passCode) ? _.template(login) : _.template(register);
+			this.$el.html(this.template);
+			this.$el.find('#landing').html(choice);
 			return this.$el;
 		},
 
 		startRegistration: function(params) {
-			console.log("starting registration");
+			Backbone.history.navigate('register', true);
 		},
 
 		doLogin: function(params) {
-			console.log("logging in");
-			Backbone.history.navigate('menu', true);
+			if(window.localStorage.passCode == $('#passcode').val()) {
+				Backbone.history.navigate('menu', true);
+			} else {				
+				$("#wrong-passcode").popup("open");
+				$('#passcode').val("");
+			}
 		}
 	});
 

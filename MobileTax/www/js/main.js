@@ -18,14 +18,27 @@ require.config({
 		},
 		jquerymobile: {
 			deps: [
-				'jquery'
+				'jquery',
+				'jquerymobileconfig'
 			],
 			exports: 'jqm'
+		},
+		jquerymobileconfig: {
+			deps: [
+				'jquery'
+			]
+		},
+		jqueryvalidation: {
+			deps: [
+				'jquery'
+			]
 		}
 	},
 	paths: {
 		jquery: 'lib/jquery-2.2.3',
 		jquerymobile: 'lib/jquery.mobile-1.4.5',
+		jquerymobileconfig: 'lib/jquery.mobile-config',
+		jqueryvalidation: 'lib/jquery-validation-1.15.0/dist/jquery.validate',
 		underscore: '../node_modules/underscore/underscore',
 		backbone: '../node_modules/backbone/backbone',
 		text: '../node_modules/requirejs-text/text'

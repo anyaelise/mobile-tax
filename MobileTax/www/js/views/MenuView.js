@@ -9,7 +9,6 @@ define([
 ], function ($, _, Backbone, JQM, Menu) {
 	'use strict';
 	
-	// Our overall **AppView** is the top-level piece of UI.
 	var MenuView = Backbone.View.extend({
 
 		el: '#page',
@@ -38,7 +37,7 @@ define([
 		},
 
 		continueReturn: function() {
-
+			Backbone.history.navigate('continueReturn', true);
 		},
 
 		submitReturn: function() {

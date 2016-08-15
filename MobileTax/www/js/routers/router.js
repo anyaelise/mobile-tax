@@ -3,21 +3,31 @@ define([
 	'jquery',
 	'backbone',
 	'views/app',
+	'views/RegistrationView',
 	'views/MenuView',
-	'views/NewReturnView'
-], function ($, Backbone, AppView, MenuView, NewReturnView) {
+	'views/NewReturnView',
+	'views/ContinueReturnView'
+], function ($, Backbone, AppView, RegistrationView, MenuView, NewReturnView, ContinueReturnView) {
 	'use strict';
 
 	var AppRouter = Backbone.Router.extend({
 		routes: {
 			'': 'home',
+			'register': 'registrationView',
 			'menu' : 'menuView',
-			'newReturn': 'newReturnView'
+			'newReturn': 'newReturnView',
+			'newReturn/:id': 'newReturnView',
+			'continueReturn': 'continueReturnView'
 		},
 
-		home: function (param) {
+		home: function() {
 			console.log("going home");
 			this.view = new AppView();
+		},
+
+		registrationView: function() {
+			console.log("going to registration form");
+			this.view = new RegistrationView();
 		},
 
 		menuView: function() {
@@ -25,9 +35,15 @@ define([
 			this.view = new MenuView();
 		},
 
-		newReturnView: function() {
+		newReturnView: function(id) {
 			console.log("starting new return");
-			this.view = new NewReturnView();
+			var options = {id: id};
+			this.view = new NewReturnView(options);
+		},
+
+		continueReturnView: function() {
+			console.log("showing saved returns");
+			this.view = new ContinueReturnView();
 		}
 	});
 

@@ -1,47 +1,47 @@
-<div data-role="content">
+<div>
     <h1 class="heading">VAT Return</h1>
     <form id="new-vat-return">
-        <div data-role="tabs">
+        <div id="tabsdiv" data-role="tabs">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#newone" data-theme="a" data-ajax="false" id="menu-nav-one" class='ui-btn-active'>1</a></li>
-                    <li><a href="#newtwo" data-theme="a" data-ajax="false" id="menu-nav-two">2</a></li>
-                    <li><a href="#newthree" data-theme="a" data-ajax="false" id="menu-nav-three">3</a></li>
-                    <li><a href="#newfour" data-theme="a" data-ajax="false" id="menu-nav-four">4</a></li>
+                    <li><a href="#newone" data-theme="a" data-ajax="false" id="menu-nav-one" class="ui-btn-active tab">1</a></li>
+                    <li><a href="#newtwo" data-theme="a" data-ajax="false" id="menu-nav-two" class="tab">2</a></li>
+                    <li><a href="#newthree" data-theme="a" data-ajax="false" id="menu-nav-three" class="tab">3</a></li>
+                    <li><a href="#newfour" data-theme="a" data-ajax="false" id="menu-nav-four" class="tab">4</a></li>
                 </ul>
             </div>
             <div id="newone" class="ui-content return-form">
                 <h1> Sales </h1>
-                <label for="sales-general"> Sales General Rate 16% </label>
-                <input type="text" name="sales-general" id="sales-general" placeholder="0.00">
+                <label for="salesgeneral"> Sales General Rate 16% </label>
+                <input type="text" class="sales" name="sales-general" id="sales-general" placeholder="0.00">
                 <label for="sales-zero"> Sales Zero Rate 0% </label>
-                <input type="text" name="sales-zero" id="sales-zero" placeholder="0.00">
+                <input type="text" class="sales" name="sales-zero" id="sales-zero" placeholder="0.00">
                 <label for="sales-special"> Sales Special Rate 12% </label>
-                <input type="text" name="sales-special" id="sales-special" placeholder="0.00">
+                <input type="text" class="sales" name="sales-special" id="sales-special" placeholder="0.00">
                 <label for="sales-exempt"> Exempt Sales </label>
-                <input type="text" name="sales-exempt" id="sales-exempt" placeholder="0.00">
+                <input type="text" class="sales" name="sales-exempt" id="sales-exempt" placeholder="0.00">
                 <div class="total" id="total-sales"><label>Total Sales: <label><p>KES 0.00</p></div>               
             </div>
             <div id="newtwo" class="ui-content return-form">
                 <h1> Expenses </h1>
                 <label for="purchases-general"> Purchases General Rate 16% </label>
-                <input type="text" name="purchases-general" id="purchases-general" placeholder="0.00">
+                <input type="text" class="purchases" name="purchases-general" id="purchases-general" placeholder="0.00">
                 <label for="purchases-zero"> Purchases Zero Rate 0% </label>
-                <input type="text" name="purchases-zero" id="purchases-zero" placeholder="0.00">
+                <input type="text" class="purchases" name="purchases-zero" id="purchases-zero" placeholder="0.00">
                 <label for="purchases-special"> Purchases Special Rate 12% </label>
-                <input type="text" name="purchases-special" id="purchases-special" placeholder="0.00">
+                <input type="text" class="purchases" name="purchases-special" id="purchases-special" placeholder="0.00">
                 <label for="purchases-exempt"> Exempt Purchases </label>
-                <input type="text" name="purchases-exempt" id="purchases-exempt" placeholder="0.00">                
+                <input type="text" class="purchases" name="purchases-exempt" id="purchases-exempt" placeholder="0.00">                
                 <div class="total" id="total-purchases"><label>Total Purchases: <label><p>KES 0.00</p></div>
             </div>
             <div id="newthree" class="ui-content return-form">
                 <h1> Credits and Adjustments </h1>
                 <label for="vat-imported">VAT on Imported Goods and Services</label>
-                <input type="text" name="vat-imported" id="vat-imported" placeholder="0.00">
+                <input type="text" class="credits" name="vat-imported" id="vat-imported" placeholder="0.00">
                 <label for="vat-withheld">Withheld VAT Amounts</label>
-                <input type="text" name="vat-withheld" id="vat-withheld" placeholder="0.00">
+                <input type="text" class="credits" name="vat-withheld" id="vat-withheld" placeholder="0.00">
                 <label for="other-credit">Other Credit Adjustments</label>
-                <input type="text" name="other-credit" id="other-credit" placeholder="0.00">               
+                <input type="text" class="credits" name="other-credit" id="other-credit" placeholder="0.00">               
                 <div class="total" id="total-credits"><label>Total Credits: <label><p>KES 0.00</p></div>
             </div>
             <div id="newfour" class="ui-content">
@@ -55,4 +55,17 @@
             </div>            
         </div>
     </form>
+</div>
+
+<div data-role="popup" id="return-errors">
+    <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+    <div data-role="header">
+        <h1>Errors Found</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p id="error-panel">This form contains errors, please correct them before submitting.</p>
+        <div class="button-panel" >
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back">OK</a>
+        </div>
+    </div>
 </div>

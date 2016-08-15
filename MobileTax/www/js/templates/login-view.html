@@ -1,5 +1,19 @@
 <div id="login">
     <label>Passcode: </label>
-   	<input type="password"></input>
+   	<input type="password" id="passcode"></input>
     <button id="login-button">Login</button>
+</div>
+
+<div data-role="popup" id="wrong-passcode">
+	<a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+	<div data-role="header">
+    	<h1>Incorrect Passcode</h1>
+    </div>
+	<div role="main" class="ui-content">
+	    <p>Incorrect passcode, please try again.</p>
+	    <div class="button-panel" >
+	    	<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back">Try Again</a>
+	    	<a href="#register" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="flow">Forgot Password?</a>
+	    </div>
+	</div>
 </div>
